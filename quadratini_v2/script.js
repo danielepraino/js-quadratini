@@ -22,16 +22,17 @@ var score = $(".score");
 //e una classe green a tutti i quadratini della griglia
 //BONUS: se il quadratino cliccato ha classe red allora incremento la variabile e modifico il testo col nuovo valore
 //se ha classe green faccio la stessa cosa
+//NOTA: risolto bug che permetteva all'utente di cliccare più volte sullo stesso quadratino
+//andando ad incrementare erroneamente il punteggio (aggiungendo off() che toglie il click() se clicato)
 function gridGen(row, col){
-  var squareCount = 0;
-  var scoreRed = scoreGreen = 0;
+  var squareCount = scoreRed = scoreGreen = 0;
   score.append("<span class='redScore'>Rossi: " + scoreRed + "</span>");
   score.append("<span class='greenScore'>Verdi: " + scoreGreen + "</span>");
   for (var i = 0; i < col; i++) {
     for (var j = 0; j < row; j++) {
       grid.append("<div class='square sq_" + squareCount + "'></div>");
       $(".sq_" + squareCount).click(function(){
-        $(this).addClass("green");
+        $(this).addClass("green").off();
         if($(this).hasClass("red")) {
           scoreRed++;
           $(".redScore").text("Rossi: " + scoreRed);
