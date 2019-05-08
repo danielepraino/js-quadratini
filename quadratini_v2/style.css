@@ -1,0 +1,40 @@
+.container, .score {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  background-color: #ecf0f1;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  margin: 5px;
+  float: left;
+}
+
+.green {
+  background-color: #2ecc71;
+}
+
+.green.red {
+  background-color: #e74c3c;
+}
+
+.score {
+  font-family: 'Baloo Bhai', cursive;
+  font-size: 30px;
+}
+
+.greenScore {
+  color: #2ecc71;
+}
+
+.redScore {
+  color: #e74c3c;
+  margin-right: 50px;
+}
